@@ -13,6 +13,7 @@ function Download() {
 
     useEffect(() => {
         setHtml(<div className="usage"> <img className="usage--img" src={Usage} alt="usage.png"></img></div>)
+        // eslint-disable-next-line
     }, [])
 
 
