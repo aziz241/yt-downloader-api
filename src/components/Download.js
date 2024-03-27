@@ -1,5 +1,7 @@
 
+import { useEffect } from "react";
 import { useSite } from "./Context/Context";
+import Usage from "../usage.png";
 function Download() {
 
 
@@ -9,7 +11,9 @@ function Download() {
 
     const { setVideo, input, setInput, setLink, setTitle, setState, setHtml, title, video, link } = useSite();
 
-
+    useEffect(() => {
+        setHtml(<div className="usage"> <img className="usage--img" src={Usage} alt="usage.png"></img></div>)
+    }, [])
 
 
     const handleClick = () => {
@@ -33,7 +37,7 @@ function Download() {
             }
         }).then(res => {
 
-            console.log(res);
+
             setLink(res.link);
             setTitle(res.title);
             setHtml(<div className='videobox'>

@@ -18,6 +18,7 @@ body {
 }
 .footer {
   position: absolute;
+  display: block;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -125,7 +126,12 @@ body {
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
-
+.usage {
+  text-align: center;
+}
+.usage--img {
+  width: 65vw;
+}
 @media screen and (max-width: 768px) {
   .main__box__form {
     width: 100%;
@@ -145,6 +151,9 @@ body {
     font-size: 1.6vh;
   }
   .videobox__video img {
+    width: 100vw;
+  }
+  .usage--img {
     width: 100vw;
   }
 }
