@@ -1,38 +1,168 @@
-.App {
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.header {
   text-align: center;
+  padding: 10px;
+  background-color: brown;
+  color: #fff;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: brown;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer__li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+  margin: 0 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footerico > svg {
+  color: #fff;
+  font-size: 1.9rem;
+}
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  background-color: grey;
+}
+.main__box {
+  padding: 10px;
+  background-color: grey;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.main__box__form {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+}
+.main__box__form--input {
+  width: 100%;
+  padding: 5px;
+  outline: 0;
+}
+.main__box__form--button {
+  background-color: beige;
+  width: 50%;
+  padding: 5px;
+  outline: 0;
+  border: 0;
+  transition: 0.3s all;
+}
+.main__box__form--button:hover {
+  cursor: pointer;
+  background-color: brown;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
+.main__box__form--button:focus {
+  outline: none;
+}
+.videobox {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s all;
+}
+.videobox__download {
+  margin: 1rem;
+
+  text-align: center;
+}
+.videobox__download--button {
+  color: #fff;
+  background-color: #252525;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s all;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.videobox__download--button:hover {
+  cursor: pointer;
+  background-color: brown;
+  color: #fff;
+}
+.videobox__download--button-desc {
+  margin: 1rem;
+}
+.disabled {
+  display: none;
+}
+.loader__main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader {
+  margin: auto;
+  transform: translate(-50%, -50%);
+  border: 8px solid #a5a5a5;
+  border-radius: 50%;
+  border-top: 8px solid brown;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .main__box__form {
+    width: 100%;
+  }
+  .videobox {
+    width: 100vw;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: unset;
+  }
+  .videobox__download--button {
+    font-size: 1.6vh;
+  }
+  .videobox__title {
+    font-size: 1.6vh;
+  }
+  .videobox__video img {
+    width: 100vw;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
