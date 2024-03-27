@@ -1,7 +1,7 @@
 
-import { useEffect } from "react";
+
 import { useSite } from "./Context/Context";
-import Usage from "../usage.png";
+
 function Download() {
 
 
@@ -9,12 +9,9 @@ function Download() {
         setInput(e.target.value);
     }
 
-    const { setVideo, input, setInput, setLink, setTitle, setState, setHtml, title, video, link } = useSite();
+    const { setVideo, input, setInput, setLink, setTitle, setState, setHtml, setShow } = useSite();
 
-    useEffect(() => {
-        setHtml(<div className="usage"> <img className="usage--img" src={Usage} alt="usage.png"></img></div>)
-        // eslint-disable-next-line
-    }, [])
+
 
 
     const handleClick = () => {
@@ -41,23 +38,12 @@ function Download() {
 
             setLink(res.link);
             setTitle(res.title);
-            setHtml(<div className='videobox'>
-                <div className="videobox__video">
-                    <img alt="videoimg" src={`https://img.youtube.com/vi/${video}/0.jpg`}></img>
-                </div>
-                <div className="videobox__title">
-                    <h3>Dönüştürülen Müzik: {title}</h3>
-                </div>
-                <div className="videobox__download">
-                    <a href={link} target="_blank" rel="noopener noreferrer" className="videobox__download--button">
-                        <span className="videobox__download--button-desc"> Download</span>
-                        <i className="fas fa-download"></i>
-                    </a>
-                </div>
-            </div >)
+            setShow(true);
+            console.log(res);
         }).catch(err => console.log(err));
         setInput('');
     }
+
 
     return (
         <>

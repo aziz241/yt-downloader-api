@@ -12,6 +12,7 @@ const Provider = ({ children }) => {
     const [title, setTitle] = useState(false);
     const [state, setState] = useState(false);
     const [html, setHtml] = useState(false);
+    const [show, setShow] = useState(false);
     const data = {
         video,
         setVideo,
@@ -25,6 +26,8 @@ const Provider = ({ children }) => {
         setState,
         html,
         setHtml,
+        show,
+        setShow
     }
 
 
